@@ -10,7 +10,9 @@ const playRound = () => {
 
   const computerSelection = getComputerChoice().toUpperCase();
 
-  const playerSelection = prompt("Rock, Paper or Scissor???").toUpperCase();
+  const playerSelection = prompt("Rock, Paper or Scissor???")
+    .toString()
+    .toUpperCase();
   console.log(`You selected ${playerSelection}`);
   console.log(`Computer selected ${computerSelection}`);
 
