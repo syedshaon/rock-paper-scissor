@@ -49,72 +49,73 @@ let playerSelection = "x";
 let clickCounter = 0;
 
 document.getElementById("choices").addEventListener("click", (e) => {
-  playerSelection = e.target.value.toString().toUpperCase();
+  playerSelection = e.target.value;
   const alienSelection = getAlienChoice().toUpperCase();
-  clickCounter += 1;
 
-  if (clickCounter <= 5) {
-    if (alienSelection === playerSelection) {
+  if (
+    playerSelection === "ROCK" ||
+    playerSelection === "PAPER" ||
+    playerSelection === "SCISSOR"
+  ) {
+    clickCounter += 1;
+
+    if (clickCounter <= 5) {
+      if (alienSelection === playerSelection) {
+        document.getElementById(
+          "round"
+        ).innerText = `You selected ${playerSelection} and Alien also selected ${alienSelection}. It was a tie!`;
+        showResult();
+      } else if (alienSelection === "ROCK" && playerSelection === "PAPER") {
+        document.getElementById(
+          "round"
+        ).innerText = `You selected ${playerSelection} and Alien selected ${alienSelection}. You Won!`;
+
+        numberUserOwn += 1;
+        showResult();
+      } else if (alienSelection === "ROCK" && playerSelection === "SCISSOR") {
+        document.getElementById(
+          "round"
+        ).innerText = `You selected ${playerSelection} and Alien selected ${alienSelection}. Alien Won!`;
+
+        numberAlienOwn += 1;
+        showResult();
+      } else if (alienSelection === "PAPER" && playerSelection === "SCISSOR") {
+        document.getElementById(
+          "round"
+        ).innerText = `You selected ${playerSelection} and Alien selected ${alienSelection}. You Won!`;
+
+        numberUserOwn += 1;
+        showResult();
+      } else if (alienSelection === "PAPER" && playerSelection === "ROCK") {
+        document.getElementById(
+          "round"
+        ).innerText = `You selected ${playerSelection} and Alien selected ${alienSelection}. Alien Won!`;
+
+        numberAlienOwn += 1;
+        showResult();
+      } else if (alienSelection === "SCISSOR" && playerSelection === "ROCK") {
+        document.getElementById(
+          "round"
+        ).innerText = `You selected ${playerSelection} and Alien selected ${alienSelection}. You Won!`;
+
+        numberUserOwn += 1;
+        showResult();
+      } else if (alienSelection === "SCISSOR" && playerSelection === "PAPER") {
+        document.getElementById(
+          "round"
+        ).innerText = `You selected ${playerSelection} and Alien selected ${alienSelection}. Alien Won!`;
+
+        numberAlienOwn += 1;
+        showResult();
+      }
+      if (clickCounter === 5) {
+        document.getElementById("reload").style.display = "block";
+      }
+    } else {
       document.getElementById(
         "round"
-      ).innerText = `You selected ${playerSelection} and Alien also selected ${alienSelection}. It was a tie!`;
-      showResult();
-    } else if (alienSelection === "ROCK" && playerSelection === "PAPER") {
-      document.getElementById(
-        "round"
-      ).innerText = `You selected ${playerSelection} and Alien selected ${alienSelection}. You Won!`;
-
-      console.log("You Won");
-      numberUserOwn += 1;
-      showResult();
-    } else if (alienSelection === "ROCK" && playerSelection === "SCISSOR") {
-      document.getElementById(
-        "round"
-      ).innerText = `You selected ${playerSelection} and Alien selected ${alienSelection}. Alien Won!`;
-
-      console.log("alien Won");
-      numberAlienOwn += 1;
-      showResult();
-    } else if (alienSelection === "PAPER" && playerSelection === "SCISSOR") {
-      document.getElementById(
-        "round"
-      ).innerText = `You selected ${playerSelection} and Alien selected ${alienSelection}. You Won!`;
-
-      console.log("You Won");
-      numberUserOwn += 1;
-      showResult();
-    } else if (alienSelection === "PAPER" && playerSelection === "ROCK") {
-      document.getElementById(
-        "round"
-      ).innerText = `You selected ${playerSelection} and Alien selected ${alienSelection}. Alien Won!`;
-
-      console.log("alien Won");
-      numberAlienOwn += 1;
-      showResult();
-    } else if (alienSelection === "SCISSOR" && playerSelection === "ROCK") {
-      document.getElementById(
-        "round"
-      ).innerText = `You selected ${playerSelection} and Alien selected ${alienSelection}. You Won!`;
-
-      console.log("You Won");
-      numberUserOwn += 1;
-      showResult();
-    } else if (alienSelection === "SCISSOR" && playerSelection === "PAPER") {
-      document.getElementById(
-        "round"
-      ).innerText = `You selected ${playerSelection} and Alien selected ${alienSelection}. Alien Won!`;
-
-      console.log("alien Won");
-      numberAlienOwn += 1;
-      showResult();
+      ).innerText = `You already played 5 round. Please reload to play again.`;
+      // document.getElementById("reload").style.display = "block";
     }
-    if (clickCounter === 5) {
-      document.getElementById("reload").style.display = "block";
-    }
-  } else {
-    document.getElementById(
-      "round"
-    ).innerText = `You already played 5 round. Please reload to play again.`;
-    // document.getElementById("reload").style.display = "block";
   }
 });

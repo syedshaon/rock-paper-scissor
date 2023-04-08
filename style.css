@@ -138,6 +138,9 @@ body {
   font-weight: bold;
   margin: 20px auto 50px;
 }
+.container {
+  background-color: rgba(255, 255, 255, 0.555);
+}
 h3.select {
   font-size: 22px;
   text-transform: uppercase;
@@ -148,6 +151,7 @@ h3.select {
   margin: 0 auto;
 }
 .heading h2 {
+  margin-top: 14px;
   font-size: 42px;
 }
 .heading p {
@@ -156,7 +160,7 @@ h3.select {
   font-style: italic;
 }
 
-.heading p img {
+.heading img {
   width: 50px;
 }
 
@@ -175,6 +179,7 @@ h3.select {
 }
 .choice img {
   width: 100%;
+  cursor: pointer;
 }
 
 .choice input {
@@ -182,6 +187,7 @@ h3.select {
   text-transform: uppercase;
   font-weight: bold;
   background-color: transparent;
+  cursor: pointer;
 }
 .imgSrc {
   position: fixed;
@@ -216,7 +222,7 @@ h3.select {
   width: 100px;
 }
 .result {
-  margin: 100px auto 50px;
+  margin: 50px auto 50px;
   display: flex;
   flex-wrap: wrap;
   align-items: center;
