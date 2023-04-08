@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Rock Paper Scissor</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Delicious+Handrawn&display=swap"
+      rel="stylesheet"
+    />
+
+    <link rel="stylesheet" href="./style.css" />
+  </head>
+  <body>
+    <a class="menu" href="./index.html">DOM Version</a>
+    <div class="heading">
+      <img src="./images/rcp2.gif" alt="rock" />
+      <h2>Rock Paper Scissor!</h2>
+      <p>
+        Play it and see if you can win against me.
+        <img src="./images/alien.gif" alt="alien-dance" />
+      </p>
+    </div>
+
+    <div class="choices" id="choices">
+      <div class="choice" id="rock">
+        <label for="rocks"><img src="./images/rock.gif" alt="rock" /></label>
+
+        <input type="button" id="rocks" value="ROCK" />
+      </div>
+      <div class="choice" id="paper">
+        <label for="papers"><img src="./images/paper.gif" alt="paper" /></label>
+
+        <input type="button" id="papers" value="PAPER" />
+      </div>
+      <div class="choice" id="scissor">
+        <label for="scissors"
+          ><img src="./images/scissor.gif" alt="scissor"
+        /></label>
+
+        <input type="button" id="scissors" value="SCISSOR" />
+      </div>
+    </div>
+    <h3 class="select">Play for 5 times and see who wins!</h3>
+
+    <div class="imgSrc">
+      Images of this site is taken from
+      https://www.freepik.com/premium-vector/rock-paper-scissors-hand-sign-game_1929822.htm
+      , https://gfycat.com/stickers/search/alien+green ,
+      https://tenor.com/en-GB/search/alien-gifs ,
+      https://www.pinterest.com/pin/512284526342568135/
+    </div>
+  </body>
+  <script src="./script-console.js"></script>
+</html>
